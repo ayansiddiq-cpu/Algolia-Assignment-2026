@@ -1,0 +1,1 @@
+# Algolia-Assignment-2026
