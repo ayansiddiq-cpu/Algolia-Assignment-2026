@@ -1,4 +1,4 @@
-# Communication Project — Customer Question Answers
+# Communication Project: Customer Question Answers
 
 ## Question 1
 
