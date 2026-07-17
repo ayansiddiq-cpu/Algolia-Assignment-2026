@@ -7,6 +7,10 @@ https://algolia-assignment-2026.vercel.app/
 ## Repo
 https://github.com/ayansiddiq-cpu/Algolia-Assignment-2026
 
+## Customer questions Q&A
+https://github.com/ayansiddiq-cpu/Algolia-Assignment-2026/blob/main/customer-questions-answers.md
+
+
 ## What I built
 
 A restaurant discovery experience for OpenTable, built on Algolia, using InstantSearch.js. It covers both personas from the discovery notes: fast, forgiving search for people who already know what they want, and a browse/discovery experience for people who don't.
