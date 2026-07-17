@@ -1,0 +1,979 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.button {
+  float: left;
+  width: 100%;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.button__link {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  display: inline-block;
+  padding: 10px 54px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  color: #7f7f7f;
+  user-select: none;
+}
+
+.button__link:hover {
+  cursor: pointer;
+}
+
+.button__link:active {
+  color: #a9a9a9;
+  border-color: #dddddd;
+}
+
+.filter {
+  float: left;
+  width: 100%;
+  overflow: scroll;
+  margin-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .filter {
+    border-right: 1px solid #e6e6e6;
+    width: 182px;
+    max-height: 430px;
+    margin-bottom: 0;
+  }
+}
+.filter__header {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  padding: 14px 0;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: center;
+  user-select: none;
+}
+
+.filter__header:after {
+  content: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/></g></svg>');
+  display: inline-block;
+  top: 2px;
+  position: relative;
+  margin: 0px 0 0 4px;
+  width: 16px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.filter__header.filter__header--open:after {
+  top: 5px;
+  transform: rotateX(180deg);
+}
+@media (min-width: 768px) {
+  .filter__header {
+    display: none;
+  }
+}
+
+.filter__header-text {
+  display: inline-block;
+  pointer-events: none;
+  cursor: pointer;
+}
+.filter__container {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 2s ease-out;
+}
+@media (min-width: 768px) {
+  .filter__container {
+    max-height: none;
+    overflow: auto;
+  }
+}
+
+.filter__container--open {
+  max-height: 800px;
+}
+@media (min-width: 768px) {
+  .filter__container--open {
+    max-height: none;
+    overflow: auto;
+  }
+}
+.filter__section {
+  padding-top: 24px;
+}
+.filter__section:before,
+.filter__section:after {
+  content: " ";
+  display: table;
+}
+.filter__section:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .filter__section {
+    margin-right: 22px;
+  }
+}
+.filter__section:last-child {
+  padding-bottom: 26px;
+}
+.filter__title {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  display: block;
+  float: left;
+  width: 100%;
+  margin-bottom: 12px;
+  color: #333333;
+  font-weight: 600;
+}
+.filter__label {
+  float: left;
+  width: 100%;
+  padding: 4px 10px;
+  margin-bottom: 1px;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+}
+.filter__label--active,
+.filter__label:hover {
+  background-color: #2897c5;
+}
+.filter__label--active {
+  cursor: default;
+}
+@media (min-width: 768px) {
+  .filter__label {
+    padding: 0 10px;
+  }
+}
+.filter__label-text {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  float: left;
+  color: #000000;
+  pointer-events: none;
+}
+.filter__label--active .filter__label-text,
+.filter__label:hover .filter__label-text {
+  color: #ffffff;
+}
+.filter__label-number {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  float: right;
+  color: #a9a9a9;
+  pointer-events: none;
+}
+.filter__label--active .filter__label-number,
+.filter__label:hover .filter__label-number {
+  color: #ffffff;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+}
+.loader__icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  animation: 1s spin infinite;
+  fill: #e6e6e6;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  background: url("./assets/images/background.png");
+  background-color: #dddddd;
+}
+@media only screen and (min-resolution: 200dpi) {
+  .page {
+    background: url("./assets/images/background_@2X.png");
+    background-size: 46px 29px;
+  }
+}
+.page__container {
+  width: 100%;
+  background: #ffffff;
+}
+.page__container:before,
+.page__container:after {
+  content: " ";
+  display: table;
+}
+.page__container:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .page__container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    width: 94%;
+    height: 94vh;
+    max-width: 820px;
+    max-height: 520px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+.page__search {
+  float: left;
+  width: 100%;
+}
+.page__content {
+  float: left;
+  width: 100%;
+  padding: 0 23px;
+  flex: 1 1 auto;
+}
+.result {
+  float: left;
+  width: 100%;
+}
+.result__image-container {
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin: 0 16px 0 0;
+  border-radius: 3px;
+  background-color: #e6e6e6;
+}
+
+.result__image {
+  max-width: 100%;
+  height: auto;
+}
+
+.result__text-contianer {
+  float: left;
+}
+.result__title {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.result__rating {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  color: #ffab66;
+}
+.result__summary {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #a9a9a9;
+}
+
+.results {
+  float: left;
+  width: 100%;
+  overflow: scroll;
+  padding-bottom: 26px;
+}
+@media (min-width: 768px) {
+  .results {
+    width: calc(100% - 182px);
+    max-height: 404px;
+    padding: 22px 0 0 22px;
+  }
+}
+.results__stats-bar {
+  float: left;
+  width: 100%;
+  position: relative;
+  height: 19px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.results__count-text {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-right: 24px;
+  border-bottom: 2px solid #ffffff;
+  color: #333333;
+}
+
+.results__time-text {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+.results__item {
+  float: left;
+  width: 100%;
+  margin-top: 18px;
+}
+.results__item--first {
+  margin-top: 24px;
+}
+.results__button {
+  float: left;
+  width: 100%;
+}
+
+.search-bar {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  background-color: #1c688e;
+}
+
+.search-bar__container {
+  padding: 22px 25px;
+}
+.search-bar__input {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+}
+
+.search-bar__input::placeholder {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  color: #b3b3b3;
+}
+
+.search-bar__input:focus {
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  outline: 0;
+}
+
+/* ==========================================================================
+   InstantSearch layout (Chunk 2 base + Chunk 3 design pass)
+   Everything above this point is the original starter CSS, written for the
+   old JS-Helper/mock-up markup. It's left in place since ripping it out
+   entirely isn't needed once it's fully neutralized below; none of the
+   classes in this section collide with it.
+   ========================================================================== */
+
+:root {
+  /* Warm terracotta instead of the mock-up's blue header bar, deliberately:
+     food-appropriate, and an easy visual tell that this isn't a recreation
+     of the provided design. Used sparingly (focus states, active filters,
+     ratings, the odd accent), the page is otherwise neutral so results are
+     the visual focus, not chrome. */
+  --color-accent: #c0522d;
+  --color-accent-dark: #9c4224;
+  --color-text: #1f1b19;
+  --color-text-muted: #6b6260;
+  --color-border: #e8e2df;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #faf8f7;
+  --font-sans: "Open Sans", sans-serif;
+  --radius: 8px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-surface-subtle);
+}
+
+/* .page / .page__container above are the original mock-up's centered,
+   fixed-height "card on a background image" shell. It's not something the
+   new markup uses, so it's neutralized here rather than deleted. */
+.page {
+  height: auto;
+  background: none;
+}
+
+.page__container {
+  position: static;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  border: none;
+  box-shadow: none;
+}
+
+.search-layout {
+  /* .page__container (legacy) is a flex column via `display: flex`. Inside
+     a flex context, `margin: 0 auto` on a flex item triggers the flexbox
+     auto-margin quirk (shrink-to-content, then center) instead of ordinary
+     block centering, so an explicit width is needed for max-width to
+     actually cap a full-width, centered block here. */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 16px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.search-layout__header {
+  margin-bottom: 20px;
+}
+
+.app-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-dark);
+  margin-bottom: 10px;
+}
+
+.search-layout__header .ais-SearchBox-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 17px;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.search-layout__header .ais-SearchBox-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(192, 82, 45, 0.15);
+}
+
+/* Discovery-persona empty state + geo label, see index.js for the logic
+   that fills in the text and toggles [hidden]. */
+.discover-heading {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.discover-heading[hidden] {
+  display: none;
+}
+
+.search-layout__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.results-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.results-toolbar #stats {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+/* Mobile-only "Filters" button that opens the slide-up panel below; hidden
+   on desktop, where the sidebar is already visible inline. */
+.filter-toggle {
+  display: none;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filter-backdrop {
+  display: none;
+}
+
+.filter-panel__header {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .search-layout__body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .search-layout__filters {
+    width: 220px;
+    flex-shrink: 0;
+    padding-right: 20px;
+    border-right: 1px solid var(--color-border);
+  }
+
+  .search-layout__results {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Filter UX guide §2.5: a partial-height slide-up sheet rather than the
+     desktop sidebar just shrunk to fit, and rather than a full-screen
+     takeover, the results toolbar stays visible above it so a diner can
+     see the effect of a filter choice without closing the panel first. */
+  .filter-toggle {
+    display: inline-flex;
+  }
+
+  .filter-backdrop.is-open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(31, 27, 25, 0.4);
+    z-index: 40;
+  }
+
+  .search-layout__filters {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background: var(--color-surface);
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    /* The one transition in this file: it's what makes the panel read as a
+       sheet sliding up rather than snapping in, which is the "basic
+       usability" line the UX guide's non-goals draw around animation. */
+    transform: translateY(100%);
+    transition: transform 0.2s ease;
+    z-index: 50;
+  }
+
+  .search-layout__filters.is-open {
+    transform: translateY(0);
+  }
+
+  .filter-panel__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .filter-panel__title {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .filter-panel__close {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    color: #fff;
+    background: var(--color-accent);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+}
+
+body.filter-panel-open {
+  overflow: hidden;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group__title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+#current-refinements:empty,
+#clear-refinements:empty {
+  display: none;
+}
+
+.ais-ClearRefinements-button {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  color: var(--color-accent-dark);
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.ais-CurrentRefinements-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.ais-CurrentRefinements-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  padding: 4px 8px;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+}
+
+.ais-CurrentRefinements-delete {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+/* The reset theme intentionally ships with no spacing at all, so the count
+   sits flush against the label ("Casual Dining2,203") without this. */
+.ais-RefinementList-labelText,
+.ais-RefinementList-count,
+.ais-NumericMenu-labelText {
+  margin-right: 4px;
+}
+
+.ais-RefinementList-item,
+.ais-NumericMenu-item {
+  margin-bottom: 4px;
+}
+
+.ais-RefinementList-showMoreButton {
+  margin-top: 4px;
+  padding: 4px 0;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  color: var(--color-accent-dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ais-SearchBox-form {
+  position: relative;
+}
+
+/* Facet search boxes (cuisine/neighborhood) share the same ais-SearchBox
+   component as the main search box, scoped smaller/subtler here so the two
+   don't compete for attention. */
+.filter-group .ais-SearchBox-input {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.hit {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hit:first-child {
+  padding-top: 0;
+}
+
+.hit__name {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.hit__name .ais-Highlight-highlighted {
+  background: none;
+  color: var(--color-accent-dark);
+  font-style: normal;
+}
+
+/* Chain disambiguation (Persona 1, UX guide §3): only appears when
+   index.js has flagged a hit as sharing its name with another result on
+   the same page, see the `isDuplicateName` transformItems logic there. */
+.hit__badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+  background: rgba(192, 82, 45, 0.1);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.hit__meta {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.hit__rating {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.hits__empty {
+  padding: 32px 0;
+  color: var(--color-text-muted);
+}
+
+.hits__empty p {
+  margin-bottom: 8px;
+}
+
+.ais-Pagination {
+  margin-top: 24px;
+}
+
+.ais-Pagination-list {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+}
+
+.ais-Pagination-item a,
+.ais-Pagination-item span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.ais-Pagination-item--selected a {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.ais-Pagination-item--disabled {
+  opacity: 0.35;
+}

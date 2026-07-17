@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Restaurant Locator - by Algolia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/png" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <!-- INTERFACE -->
+    <div class="page">
+      <div class="page__container">
+        <div class="search-layout">
+          <header class="search-layout__header">
+            <p class="app-title">Restaurant Search</p>
+            <div id="searchbox"></div>
+            <!-- Single status line: doubles as the discovery-persona "empty
+                 state" headline and the geo-awareness indicator, updated by
+                 index.js. Hidden automatically once a query is typed. -->
+            <p id="discover-heading" class="discover-heading">Top-rated restaurants</p>
+          </header>
+
+          <div class="search-layout__body">
+            <!-- Mobile-only: opens the filters as a bottom sheet instead of
+                 a full sidebar. Hidden on desktop via CSS, where the
+                 sidebar is already visible. -->
+            <div class="results-toolbar">
+              <div id="stats"></div>
+              <button type="button" id="filter-toggle" class="filter-toggle">
+                Filters
+              </button>
+            </div>
+
+            <div id="filter-backdrop" class="filter-backdrop"></div>
+
+            <aside class="search-layout__filters" id="search-layout__filters">
+              <div class="filter-panel__header">
+                <span class="filter-panel__title">Filters</span>
+                <button type="button" id="filter-close" class="filter-panel__close">
+                  Show results
+                </button>
+              </div>
+
+              <div id="clear-refinements"></div>
+              <div id="current-refinements"></div>
+
+              <div class="filter-group">
+                <h4 class="filter-group__title">Cuisine</h4>
+                <div id="cuisine-list"></div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-group__title">Neighborhood</h4>
+                <div id="neighborhood-list"></div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-group__title">Price</h4>
+                <div id="price-list"></div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-group__title">Rating</h4>
+                <div id="rating-list"></div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-group__title">Dining style</h4>
+                <div id="dining-style-list"></div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-group__title">Payment</h4>
+                <div id="payment-list"></div>
+              </div>
+            </aside>
+
+            <main class="search-layout__results">
+              <div id="hits"></div>
+              <div id="pagination"></div>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /INTERFACE -->
+
+    <!-- SCRIPTS -->
+    <script type="module" src="./index.js"></script>
+    <!-- /SCRIPTS -->
+  </body>
+</html>
